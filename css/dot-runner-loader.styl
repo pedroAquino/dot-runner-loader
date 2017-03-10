@@ -1,0 +1,113 @@
+basic-font = 'Open Sans', sans-serif
+starLight = #D6D8ED
+grena = #540316
+
+containerPadding = 10px
+blockDimension = 15px
+spaceBetwenBlock = 5px
+
+//----- SKIN
+body
+  background: grena
+  padding: 20px
+  font-family: basic-font
+
+.block
+  width: blockDimension
+  height: blockDimension
+  border-radius: 50%
+  background: grena
+
+.mask
+  background: starLight
+  opacity: 0.6
+  
+.button
+  border: 0px
+  padding: 15px
+  background: starLight
+  border-radius: 5px
+  color: grena
+  
+.button:hover
+  cursor: pointer
+ 
+#content
+  width: 100%
+  height: 100%
+  
+//----- STRUCTURE
+.l-mask
+  position: absolute
+  top: 0px
+  left: 0px
+  width: 100%
+  height: 100%
+  overflow: hidden
+
+.l-container
+  position: absolute
+  width: 100%
+  height: blockDimension
+  padding: containerPadding
+  top: 50%
+  margin-top: - (blockDimension/2)
+  overflow: hidden
+
+
+.l-block
+    display: inline-block
+    position: absolute
+    left: - blockDimension
+    
+//----- ANIMATIONS
+
+@keyframes block1Animation
+  0%
+    left: - blockDimension
+  50%
+    left: calc(50% + 20px) 
+  80%
+    left: calc(50% + 20px)
+  100%
+    left: 100%
+      
+      
+@keyframes block2Animation
+  0%
+    left: - blockDimension
+  50%
+    left: 50% 
+  80%
+    left: 50%
+  100%
+    left: 100%
+      
+@keyframes block3Animation
+  0%
+    left: - blockDimension
+  50%
+    left: calc(50% - 20px) 
+  80%
+    left: calc(50% - 20px)
+  100%
+    left: 100%
+      
+.animation
+  animation-duration: 3s
+  animation-iteration-count: infinite
+
+.block1
+  @extend .animation
+  animation-name: block1Animation
+  animation-delay: 1s
+  
+.block2
+  @extend .animation
+  animation-name: block2Animation
+  animation-delay: 1.5s
+  
+.block3
+  @extend .animation
+  animation-name: block3Animation
+  animation-delay: 2s

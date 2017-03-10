@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>do-runner-loader</title>
+		<link rel="stylesheet" media="all" href="css/dot-runner-loader.css">
+		<meta name="viewport" content="width=device-width">
+	</head>
+	<body>
+		<div id="content">
+		  <button class="button" id="btnShow">Show Loader</button>
+		</div>
+		<script type="text/javascript" src="js/dot-runner-loader.js"></script>
+		<script type="text/javascript">
+		//**** EXAMPLE USAGE
+			(function() {
+			  let $ = document.querySelector.bind(document);
+			  
+			  $("#btnShow").onclick = function() {
+			    let container = $("#content");
+			    
+			    let loader = new DotRunnerLoader(container);
+			    loader.init();
+			    
+			    setTimeout(function(){ loader.finish(); }, 10000)
+			  };
+			  
+			})();
+		</script>
+	</body>
+</html>
